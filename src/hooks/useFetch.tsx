@@ -15,6 +15,7 @@ export default function useFetch({ url, method = "get" }:IProps) {
     const fetchData = async () => {
       setIsLoading(true);
       try {
+        // @ts-ignore
         const { data } = await axios[method](url);
         setData(data.results);
       } catch (err) {

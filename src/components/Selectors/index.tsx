@@ -15,6 +15,7 @@ export const Selectors = ({ list }:IProps) => {
           label="Pokemon"
           selectorsList={data}
           setSelector={(value) =>
+            // @ts-ignore
             setSelectors((prev) => ({ ...prev, [id]: value }))
           }
         />
