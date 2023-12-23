@@ -25,6 +25,7 @@ export default function SelectComponent({
         size="sm"
         variant="text"
         onClick={() => setIsOpen((prev) => !prev)}
+        style={{textTransform: "capitalize"}}
       />
       {isOpen && <DropDown data={selectorsList} onClickItem={onClickItem} />}
     </div>

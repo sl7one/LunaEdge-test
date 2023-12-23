@@ -23,12 +23,12 @@ export default function Form() {
     if (!isValidSelectors()) return;
     setPortalIsVisible(true);
 
-    console.log({ data, selectors });
+    console.log("form-data",{ data, selectors });
   };
 
   return (
     <form
-      className="w-full max-w-screen-sm mx-auto p-6 border-2 border-indigo-600 rounded-xl flex gap-4 flex-col mt-8"
+      className="w-full max-w-screen-sm mx-auto p-6 border-2 border-indigo-600 rounded-xl flex gap-4 flex-col mt-[300px]"
       onSubmit={handleSubmit(onSubmit)}
     >
       <InputField
@@ -59,7 +59,12 @@ export default function Form() {
         })}
       />
 
+      {!isValidSelectors() && (
+        <p className="text-red-700"> Select all members</p>
+      )}
+
       <Selectors list={members} />
+
       <Button type="submit" label="submit" />
     </form>
   );

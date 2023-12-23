@@ -19,6 +19,7 @@ interface ButtonProps {
 
   label: string;
   onClick?: () => void;
+  style?: { [key: string]: string | number };
 }
 
 export const Button = ({
