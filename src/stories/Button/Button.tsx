@@ -1,10 +1,9 @@
 import React from "react";
 import "./button.css";
-import { Icon } from "./Icons/Icon";
-import { IconName } from "./Icons/types";
+import { Icon } from "../Icons/Icon";
+import { IconName } from "../Icons/types";
 
 interface ButtonProps {
-
   backgroundColor?: string;
 
   variant?: "outline" | "primary" | "text";
@@ -21,7 +20,6 @@ interface ButtonProps {
   label: string;
   onClick?: () => void;
 }
-
 
 export const Button = ({
   disabled = false,
