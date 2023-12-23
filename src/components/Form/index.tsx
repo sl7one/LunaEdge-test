@@ -2,6 +2,14 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { Button } from "../../stories/Button/Button";
 import { InputField } from "../InputField/InputField";
 import { Inputs } from "../InputField/types";
+import { Selectors } from "../Selectors";
+
+  const command = [
+    "First Player",
+    "Second Player",
+    "Third Player",
+    "Fourth Player",
+  ];
 
 export default function Form() {
   const {
@@ -46,6 +54,8 @@ export default function Form() {
           pattern: /^[A-Za-z]+$/i,
         })}
       />
+
+      <Selectors list={command} />
       <Button type="submit" label="submit" />
     </form>
   );
