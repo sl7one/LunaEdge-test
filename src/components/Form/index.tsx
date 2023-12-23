@@ -28,7 +28,7 @@ export default function Form() {
 
   return (
     <form
-      className="w-full max-w-screen-sm mx-auto p-6 border-2 border-indigo-600 rounded-xl flex gap-4 flex-col mt-[300px]"
+      className="w-full max-w-screen-sm mx-auto p-6 border-2 border-indigo-600 rounded-xl flex gap-4 flex-col mt-[100px]"
       onSubmit={handleSubmit(onSubmit)}
     >
       <InputField

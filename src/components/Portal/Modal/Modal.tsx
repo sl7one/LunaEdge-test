@@ -23,7 +23,6 @@ export default function Modal({ setIsVisible }: IProps) {
       setIsLoading(true);
       try {
         const results = await axios.all(urls);
-        console.log(results.map(({ data }) => data));
         setData(results.map(({ data }) => data));
       } catch (err) {
         if (err instanceof Error) {
@@ -47,7 +46,7 @@ export default function Modal({ setIsVisible }: IProps) {
         ) : (
           <div className="grid grid-cols-4 gap-0.5 ">
             {data.map((player, id) => (
-              <div key={player.id} className="grid grid-rows">
+              <div key={player.id+id} className="grid grid-rows">
                 <p>{members?.[id]}</p>
                 <p className="font-bold uppercase">{player?.name}</p>
                 <img
