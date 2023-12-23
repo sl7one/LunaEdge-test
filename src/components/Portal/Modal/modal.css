@@ -1,0 +1,11 @@
+.grid-rows{
+    grid-template-rows: 30px 35px 100px 80px 1fr;
+}
+
+.min-width{
+ min-width: 600px;
+}
+
+.min-height {
+    min-height: 400px;
+}

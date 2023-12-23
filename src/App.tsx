@@ -1,5 +1,6 @@
 import Container from "./components/Container";
 import Form from "./components/Form";
+import Portal from "./components/Portal";
 import { GlobalProvider } from "./context/context";
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <GlobalProvider>
       <Container>
         <Form />
+        <Portal />
       </Container>
     </GlobalProvider>
   );

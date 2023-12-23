@@ -3,23 +3,31 @@ import { Button } from "../../stories/Button/Button";
 import { InputField } from "../InputField/InputField";
 import { Inputs } from "../InputField/types";
 import { Selectors } from "../Selectors";
+import { command } from "../../constants/command";
+import { useContext } from "react";
+import { GlobalContext } from "../../context/context";
 
-  const command = [
-    "First Player",
-    "Second Player",
-    "Third Player",
-    "Fourth Player",
-  ];
+
 
 export default function Form() {
+    const { selectors, setPortalIsVisible } = useContext(GlobalContext)!;
+
+  
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
 
+    const isValidSelectors = () =>
+      Object.values(selectors).every((value) => value);
+
+
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log({ data });
+    if (!isValidSelectors()) return;
+    setPortalIsVisible(true);
+
+    console.log({ data, selectors });
   };
 
   return (
