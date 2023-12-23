@@ -1,4 +1,5 @@
 import { useForm, SubmitHandler } from "react-hook-form";
+import { Button } from "../../stories/Button";
 
 export default function Form() {
   const {
@@ -16,7 +17,7 @@ export default function Form() {
       className="w-full max-w-screen-sm mx-auto p-6 border-2 border-indigo-600 rounded-xl flex gap-4 flex-col mt-8"
       onSubmit={handleSubmit(onSubmit)}
     >
-      <button type="button">submit</button>
+      <Button label="submit"/>
     </form>
   );
 }
