@@ -1,7 +1,6 @@
 import { IMetaBlockProps } from "./types";
 
 export const MetaBlock = ({ title, metaList, listKey }: IMetaBlockProps) => {
-  console.log({ metaList, listKey });
   return (
     <div>
       <p className="font-bold">{title}</p>

@@ -3,25 +3,21 @@ import { Button } from "../../stories/Button/Button";
 import { InputField } from "../InputField/InputField";
 import { Inputs } from "../InputField/types";
 import { Selectors } from "../Selectors";
-import { command } from "../../constants/command";
+import {  members } from "../../constants/members";
 import { useContext } from "react";
 import { GlobalContext } from "../../context/context";
 
-
-
 export default function Form() {
-    const { selectors, setPortalIsVisible } = useContext(GlobalContext)!;
+  const { selectors, setPortalIsVisible } = useContext(GlobalContext)!;
 
-  
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<Inputs>();
 
-    const isValidSelectors = () =>
-      Object.values(selectors).every((value) => value);
-
+  const isValidSelectors = () =>
+    Object.values(selectors).every((value) => value);
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     if (!isValidSelectors()) return;
@@ -63,7 +59,7 @@ export default function Form() {
         })}
       />
 
-      <Selectors list={command} />
+      <Selectors list={members} />
       <Button type="submit" label="submit" />
     </form>
   );

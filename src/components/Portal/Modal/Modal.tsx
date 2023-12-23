@@ -6,6 +6,7 @@ import "./modal.css";
 import { CloseBtn } from "./ButtonClose";
 import { MetaBlock } from "./MetaBlock";
 import { IProps } from "./types";
+import {  members } from "../../../constants/members";
 
 export default function Modal({ setIsVisible }: IProps) {
   const { selectors } = useContext(GlobalContext)!;
@@ -22,6 +23,7 @@ export default function Modal({ setIsVisible }: IProps) {
       setIsLoading(true);
       try {
         const results = await axios.all(urls);
+        console.log(results.map(({ data }) => data));
         setData(results.map(({ data }) => data));
       } catch (err) {
         if (err instanceof Error) {
@@ -46,7 +48,7 @@ export default function Modal({ setIsVisible }: IProps) {
           <div className="grid grid-cols-4 gap-0.5 ">
             {data.map((player, id) => (
               <div key={player.id} className="grid grid-rows">
-                <p>{`Player ${++id}`}</p>
+                <p>{members?.[id]}</p>
                 <p className="font-bold uppercase">{player?.name}</p>
                 <img
                   src={player.sprites?.front_default}
