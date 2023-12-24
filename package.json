@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "homepage": "https://sl7one.github.io/LunaEdge-test/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
